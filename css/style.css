@@ -1,0 +1,914 @@
+/* ==========================================================================
+   Cineplex Brand Theme Stylesheet - Design 4
+   Brand Colors:
+   - Cineplex Black & Dark Navy: #040A14, #071526, #0A1E35
+   - Cineplex Dark Blue Panels:  #091C33, #0E294A
+   - Cineplex Light Blue Accent: #00A8E8, #0074D9, #38BDF8
+   - Cineplex Yellow / Gold:     #FFCC00, #FFD700, #E5A800
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: radial-gradient(circle at 50% 10%, #0a1e38 0%, #040914 70%);
+  background-color: #040914;
+  color: #f1f5f9;
+  line-height: 1.45;
+  padding: 24px 16px;
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   HAMBURGER DRAWER MENU
+   ========================================================================== */
+
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(2, 6, 14, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.drawer-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cineplex-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 85vw;
+  background-color: #061527;
+  border-right: 2px solid #ffcc00;
+  z-index: 999;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 12px 0 35px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+}
+
+.cineplex-drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 2px solid #132e4d;
+  background-color: #030b14;
+}
+
+.drawer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.drawer-logo {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.drawer-title {
+  color: #ffcc00;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.drawer-close-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.15s ease;
+}
+
+.drawer-close-btn:hover {
+  color: #ffcc00;
+}
+
+.drawer-body {
+  padding: 20px 16px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #38bdf8;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 14px 10px 8px 10px;
+}
+
+.drawer-section-label:first-child {
+  margin-top: 0;
+}
+
+.drawer-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+/* Non-clickable drawer options as instructed */
+.drawer-menu-item.non-clickable {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: 6px;
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  background-color: rgba(14, 41, 74, 0.4);
+  pointer-events: none;
+  cursor: default;
+  user-select: none;
+  border: 1px solid transparent;
+}
+
+.drawer-item-icon {
+  font-size: 16px;
+  width: 22px;
+  text-align: center;
+}
+
+.drawer-item-text {
+  flex: 1;
+}
+
+.drawer-notice {
+  margin-top: 24px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background-color: #0b223d;
+  border: 1px dashed #0074d9;
+  color: #94a3b8;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   MAIN PROTOTYPE CONTAINER
+   ========================================================================== */
+
+.wireframe-container {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #07162b;
+  border: 1px solid #143761;
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   GLOBAL CINEPLEX HEADER
+   ========================================================================== */
+
+.wireframe-header.cineplex-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  background-color: #030913;
+  border-bottom: 3px solid #ffcc00;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+  width: 120px;
+}
+
+.header-right {
+  justify-content: flex-end;
+}
+
+/* Hamburger Toggle Button */
+.menu-toggle-btn {
+  background: none;
+  border: 1px solid #1a426e;
+  border-radius: 6px;
+  padding: 8px 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all 0.2s ease;
+  background-color: #0a203a;
+}
+
+.menu-toggle-btn:hover {
+  background-color: #10325b;
+  border-color: #ffcc00;
+}
+
+.hamburger-bar {
+  width: 20px;
+  height: 2px;
+  background-color: #ffcc00;
+  border-radius: 2px;
+  display: block;
+}
+
+/* Brand Logo & Yellow Cineplex Title */
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cineplex-logo-img {
+  width: 36px;
+  height: 36px;
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(255, 204, 0, 0.4));
+}
+
+.cineplex-title {
+  color: #ffcc00;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(255, 204, 0, 0.35);
+  font-family: 'Arial Black', Impact, sans-serif;
+}
+
+/* ==========================================================================
+   STEP PAGE VIEWS
+   ========================================================================== */
+
+.step-view {
+  display: none;
+  padding: 24px;
+}
+
+.step-view.active {
+  display: block;
+}
+
+.two-column-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Panels */
+.wireframe-panel {
+  border: 1px solid #173b64;
+  border-radius: 8px;
+  background-color: #091c33;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.panel-title {
+  font-size: 15px;
+  font-weight: 800;
+  padding: 12px 18px;
+  border-bottom: 1px solid #173b64;
+  background: linear-gradient(90deg, #07172a, #0b223d);
+  color: #ffcc00;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.panel-content {
+  padding: 16px;
+  flex: 1;
+}
+
+/* ==========================================================================
+   STEP 1: MOVIE GRID (ENLARGED 2x4)
+   ========================================================================== */
+
+.movie-full-panel {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.movie-grid-8 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.movie-card {
+  border: 1px solid #1c4573;
+  border-radius: 6px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #06162a;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-card:hover {
+  transform: translateY(-4px);
+  border-color: #00a8e8;
+  background-color: #0b2545;
+  box-shadow: 0 8px 20px rgba(0, 168, 232, 0.25);
+}
+
+.movie-card.selected {
+  outline: 2px solid #ffcc00;
+  border-color: #ffcc00;
+  background: linear-gradient(180deg, #0f2d52, #081a30);
+  box-shadow: 0 0 18px rgba(255, 204, 0, 0.45);
+}
+
+.movie-card.selected::after {
+  content: "✓ Selected";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #ffcc00;
+  color: #020813;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 6px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+
+/* Movie Poster Image Box */
+.poster-image-box {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #020813;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie-poster-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover .movie-poster-img {
+  transform: scale(1.05);
+}
+
+.poster-placeholder-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #07192d;
+  color: #38bdf8;
+  font-size: 12px;
+  padding: 8px;
+}
+
+.movie-card-info {
+  margin-top: 4px;
+}
+
+.movie-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-genre {
+  font-size: 12px;
+  color: #38bdf8;
+  font-weight: 600;
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   STEP 1: LOCATION PANEL
+   ========================================================================== */
+
+.location-panel {
+  display: none;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.location-panel.visible {
+  display: block;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* Selection Lists */
+.selection-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.selection-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 6px;
+  border: 1px solid #193f69;
+  background-color: #07192e;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 8px;
+}
+
+.selection-item:last-child {
+  margin-bottom: 0;
+}
+
+.selection-item:hover {
+  background-color: #0d284a;
+  border-color: #00a8e8;
+}
+
+.selection-item.selected {
+  border: 2px solid #ffcc00;
+  background: linear-gradient(90deg, #123359, #091d35);
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.3);
+}
+
+.selection-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+  background-color: #0b223d;
+  border: 1px solid #0074d9;
+}
+
+.selection-item.selected .selection-icon {
+  border-color: #ffcc00;
+  background-color: #ffcc00;
+  color: #020813;
+}
+
+.selection-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.selection-sub {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   STEP 2: SEATING CHART
+   ========================================================================== */
+
+.screen-wireframe {
+  width: 85%;
+  margin: 0 auto 20px auto;
+  text-align: center;
+  padding: 8px;
+  border-top: 3px solid #00a8e8;
+  border-radius: 8px 8px 0 0;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #38bdf8;
+  background: linear-gradient(180deg, rgba(0, 168, 232, 0.2), transparent);
+  text-shadow: 0 0 8px rgba(0, 168, 232, 0.6);
+}
+
+.seating-chart {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 8px;
+  justify-items: center;
+  margin-bottom: 20px;
+}
+
+.seat {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #1e4a7a;
+  border-radius: 6px 6px 2px 2px;
+  background-color: #0b233f;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 600;
+  color: #94a3b8;
+  user-select: none;
+  transition: all 0.15s ease;
+}
+
+.seat:hover:not(.occupied) {
+  background-color: #0074d9;
+  border-color: #38bdf8;
+  color: #ffffff;
+  box-shadow: 0 0 8px rgba(0, 168, 232, 0.6);
+}
+
+.seat.selected {
+  background-color: #ffcc00;
+  border-color: #ffd700;
+  color: #020813;
+  font-weight: 800;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+}
+
+.seat.occupied {
+  background-color: #1a2736;
+  border-color: #26384a;
+  color: #475569;
+  cursor: not-allowed;
+}
+
+.seat-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 12px;
+  padding-top: 14px;
+  border-top: 1px solid #143559;
+  color: #94a3b8;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px 3px 1px 1px;
+}
+
+.legend-swatch.available {
+  background-color: #0b233f;
+  border: 1px solid #1e4a7a;
+}
+
+.legend-swatch.occupied {
+  background-color: #1a2736;
+  border: 1px solid #26384a;
+}
+
+.legend-swatch.selected {
+  background-color: #ffcc00;
+  border: 1px solid #ffd700;
+}
+
+/* ==========================================================================
+   STEP 3: PAYMENT DETAILS
+   ========================================================================== */
+
+.payment-full-panel {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #cbd5e1;
+  margin-bottom: 6px;
+}
+
+.wireframe-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid #1b4573;
+  border-radius: 6px;
+  background-color: #051426;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.wireframe-input:focus {
+  border-color: #00a8e8;
+  box-shadow: 0 0 10px rgba(0, 168, 232, 0.4);
+}
+
+.payment-top-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+/* Validation Alerts */
+.step-reminder,
+.payment-reminder {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #2b1f06;
+  border: 1px solid #d97706;
+  color: #fef08a;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-top: 14px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
+}
+
+.step-reminder .reminder-icon,
+.payment-reminder .reminder-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.wireframe-input.input-error {
+  border-color: #ef4444;
+  background-color: #220e12;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+}
+
+/* Cineplex Yellow Checkout Button */
+.btn-cart-checkout {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #ffd700, #ffb700);
+  color: #030a14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 20px rgba(255, 183, 0, 0.4);
+}
+
+.btn-cart-checkout:hover {
+  background: linear-gradient(135deg, #ffe066, #ffcc00);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 204, 0, 0.6);
+}
+
+.cart-icon {
+  font-size: 20px;
+}
+
+/* ==========================================================================
+   BOOKING SUMMARY BAR
+   ========================================================================== */
+
+.booking-summary-bar {
+  padding: 12px 18px;
+  background-color: #051426;
+  border: 1px solid #163c66;
+  border-radius: 6px;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+  color: #cbd5e1;
+}
+
+.booking-summary-bar strong {
+  color: #ffcc00;
+}
+
+/* ==========================================================================
+   STEP ACTIONS & BUTTONS
+   ========================================================================== */
+
+.step-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #133357;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.wireframe-btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1px solid #0074d9;
+  background-color: #071c33;
+  color: #90cdf4;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wireframe-btn:hover {
+  background-color: #0074d9;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(0, 116, 217, 0.5);
+}
+
+.wireframe-btn.primary {
+  background: linear-gradient(135deg, #ffd700, #ffb700);
+  color: #030a14;
+  border: none;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(255, 183, 0, 0.35);
+}
+
+.wireframe-btn.primary:hover {
+  background: linear-gradient(135deg, #ffe066, #ffcc00);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255, 204, 0, 0.55);
+}
+
+/* ==========================================================================
+   CONFIRMATION BOX
+   ========================================================================== */
+
+.confirmation-box {
+  display: none;
+  margin-top: 20px;
+  padding: 24px;
+  border: 2px solid #ffcc00;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #091e38, #051224);
+  text-align: center;
+  box-shadow: 0 0 24px rgba(255, 204, 0, 0.25);
+}
+
+.confirmation-box.active {
+  display: block;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.confirmation-box h3 {
+  margin-bottom: 8px;
+  font-size: 20px;
+  color: #ffcc00;
+  font-weight: 800;
+}
+
+.confirmation-box p {
+  color: #cbd5e1;
+}
+
+#confirmation-details {
+  margin: 16px 0;
+  padding: 14px;
+  background-color: #040e1c;
+  border-radius: 6px;
+  border: 1px solid #143761;
+  text-align: left;
+  line-height: 1.6;
+}
+
+#confirmation-details p strong {
+  color: #38bdf8;
+}
+
+.btn-download-ticket {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #ffd700, #ffb700);
+  color: #030a14;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  box-shadow: 0 4px 15px rgba(255, 183, 0, 0.35);
+}
+
+.btn-download-ticket:hover {
+  background: linear-gradient(135deg, #ffe066, #ffcc00);
+  box-shadow: 0 6px 20px rgba(255, 204, 0, 0.55);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .step-view {
+    padding: 16px;
+  }
+
+  .two-column-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-grid-8 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .seating-chart {
+    gap: 5px;
+  }
+
+  .seat {
+    width: 24px;
+    height: 24px;
+    font-size: 8px;
+  }
+
+  .cineplex-title {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+  .header-left,
+  .header-right {
+    width: 60px;
+  }
+}

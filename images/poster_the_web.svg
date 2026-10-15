@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="100%" height="100%">
+  <defs>
+    <radialGradient id="fogGlow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#006680" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#061c30" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#020810" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="webGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="50%" stop-color="#00D4FF"/>
+      <stop offset="100%" stop-color="#007799"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Deep Noir Background -->
+  <rect width="600" height="900" fill="#030914"/>
+  <rect width="600" height="900" fill="url(#fogGlow)"/>
+
+  <!-- Intricate Spiderweb Geometry in Mist -->
+  <g stroke="url(#webGold)" stroke-width="1.5" opacity="0.35" filter="url(#glow)">
+    <!-- Radial Web Spokes from Center -->
+    <line x1="300" y1="360" x2="30" y2="50"/>
+    <line x1="300" y1="360" x2="160" y2="20"/>
+    <line x1="300" y1="360" x2="300" y2="10"/>
+    <line x1="300" y1="360" x2="440" y2="20"/>
+    <line x1="300" y1="360" x2="570" y2="50"/>
+    <line x1="300" y1="360" x2="590" y2="220"/>
+    <line x1="300" y1="360" x2="580" y2="460"/>
+    <line x1="300" y1="360" x2="520" y2="650"/>
+    <line x1="300" y1="360" x2="390" y2="720"/>
+    <line x1="300" y1="360" x2="210" y2="720"/>
+    <line x1="300" y1="360" x2="80" y2="650"/>
+    <line x1="300" y1="360" x2="20" y2="460"/>
+    <line x1="300" y1="360" x2="10" y2="220"/>
+
+    <!-- Concentric Web Rings -->
+    <polygon points="300,310 330,340 330,380 300,410 270,380 270,340" fill="none"/>
+    <polygon points="300,260 360,310 370,410 300,460 230,410 240,310" fill="none"/>
+    <polygon points="300,200 400,270 410,440 300,520 190,440 200,270" fill="none"/>
+    <polygon points="300,140 450,230 460,480 300,580 140,480 150,230" fill="none"/>
+    <polygon points="300,70 510,180 520,530 300,650 80,530 90,180" fill="none"/>
+  </g>
+
+  <!-- City Skyline Silhouette in Fog -->
+  <path d="M0,720 L40,720 L40,650 L90,650 L90,680 L140,680 L140,600 L180,600 L180,690 L240,690 L240,580 L290,580 L290,720 L600,720 L600,900 L0,900 Z" fill="#02060D"/>
+
+  <!-- Shadowy Detective Silhouette with Streetlight Rim -->
+  <g fill="#010408">
+    <!-- Fedora & Trench Coat Silhouette -->
+    <path d="M 270 380 Q 300 360 330 380 L 325 390 L 335 392 Q 300 388 265 392 L 275 390 Z" fill="#00E5FF" opacity="0.3" filter="url(#glow)"/>
+    <ellipse cx="300" cy="385" rx="35" ry="8" fill="#01040A"/>
+    <path d="M 282 385 C 282 368 288 360 300 360 C 312 360 318 368 318 385 Z" fill="#01040A"/>
+    <!-- Head -->
+    <circle cx="300" cy="398" r="14" fill="#01040A"/>
+    <!-- Coat -->
+    <path d="M 285 410 L 255 460 L 250 580 L 275 620 L 285 710 L 315 710 L 325 620 L 350 580 L 345 460 L 315 410 Z" fill="#01040A"/>
+  </g>
+
+  <!-- Glowing Yellow Streetlight Cone -->
+  <polygon points="460,350 420,680 520,680" fill="#FFCC00" opacity="0.12"/>
+  <circle cx="460" cy="350" r="12" fill="#FFE066" opacity="0.8" filter="url(#glow)"/>
+  <rect x="458" y="360" width="4" height="320" fill="#222222"/>
+
+  <!-- Movie Title & Typography -->
+  <text x="300" y="80" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="14" fill="#00D4FF" letter-spacing="6">NOTHING ESCAPES THE THREADS OF TRUTH</text>
+  
+  <text x="300" y="785" text-anchor="middle" font-family="'Impact', 'Arial Black', sans-serif" font-size="64" fill="#FFFFFF" letter-spacing="8" filter="url(#glow)">THE WEB</text>
+  <text x="300" y="818" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#FFCC00" letter-spacing="4">A PSYCHOLOGICAL NOIR MYSTERY</text>
+
+  <!-- Film Credits Billing Block -->
+  <text x="300" y="855" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#718096" letter-spacing="2">
+    STARRING MARCUS CROSS • HELENA VANE • ARTHUR STERLING
+  </text>
+  <text x="300" y="872" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#4A5568" letter-spacing="1.5">
+    DIRECTED BY SEBASTIAN COLE • MUSIC BY TERRY REED • CINEPLEX EXCLUSIVE
+  </text>
+</svg>

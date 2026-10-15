@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#001833"/>
+      <stop offset="40%" stop-color="#003366"/>
+      <stop offset="70%" stop-color="#0074D9"/>
+      <stop offset="90%" stop-color="#FF9900"/>
+      <stop offset="100%" stop-color="#110500"/>
+    </linearGradient>
+    <linearGradient id="afterburner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#00D4FF"/>
+      <stop offset="70%" stop-color="#FFCC00"/>
+      <stop offset="100%" stop-color="#FF3300"/>
+    </linearGradient>
+    <filter id="speedGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect width="600" height="900" fill="url(#skyGrad)"/>
+
+  <!-- High-Speed Motion Lines -->
+  <g stroke="#00E5FF" stroke-width="1.5" opacity="0.4" filter="url(#speedGlow)">
+    <line x1="80" y1="90" x2="240" y2="340" stroke-dasharray="20 40"/>
+    <line x1="140" y1="50" x2="270" y2="300" stroke-dasharray="30 50"/>
+    <line x1="520" y1="120" x2="360" y2="360" stroke-dasharray="15 35"/>
+    <line x1="450" y1="60" x2="330" y2="310" stroke-dasharray="25 45"/>
+    <line x1="40" y1="200" x2="220" y2="450" stroke-dasharray="20 30"/>
+    <line x1="560" y1="220" x2="380" y2="460" stroke-dasharray="20 30"/>
+  </g>
+
+  <!-- Sonic Boom Mach Cone -->
+  <ellipse cx="300" cy="380" rx="220" ry="60" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.4" filter="url(#speedGlow)"/>
+  <ellipse cx="300" cy="400" rx="160" ry="40" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.6"/>
+
+  <!-- Twin Afterburner Plumes -->
+  <polygon points="275,410 260,560 278,415" fill="url(#afterburner)" filter="url(#speedGlow)"/>
+  <polygon points="325,410 340,560 322,415" fill="url(#afterburner)" filter="url(#speedGlow)"/>
+  <polygon points="280,412 290,520 285,415" fill="#FFFFFF" opacity="0.8"/>
+  <polygon points="320,412 310,520 315,415" fill="#FFFFFF" opacity="0.8"/>
+
+  <!-- Stealth Supersonic Fighter Jet (Climbing toward viewer) -->
+  <g filter="url(#speedGlow)">
+    <!-- Main Jet Wings -->
+    <polygon points="300,220 390,380 490,440 370,420 340,410 300,430 260,410 230,420 110,440 210,380" fill="#0A1828" stroke="#00D4FF" stroke-width="2"/>
+    <!-- Canopy Glass Glow -->
+    <ellipse cx="300" cy="300" rx="12" ry="32" fill="#FFCC00" opacity="0.9"/>
+    <!-- Fuselage Center Details -->
+    <polygon points="300,220 312,380 300,420 288,380" fill="#142C44"/>
+    <!-- Vertical Stabilizers / Twin Tails -->
+    <polygon points="265,370 250,330 260,390" fill="#061220" stroke="#00D4FF" stroke-width="1.5"/>
+    <polygon points="335,370 350,330 340,390" fill="#061220" stroke="#00D4FF" stroke-width="1.5"/>
+  </g>
+
+  <!-- Clouds in Low Horizon -->
+  <ellipse cx="120" cy="680" rx="160" ry="60" fill="#051020" opacity="0.8"/>
+  <ellipse cx="480" cy="690" rx="180" ry="70" fill="#051020" opacity="0.8"/>
+  <ellipse cx="300" cy="710" rx="220" ry="60" fill="#030A14"/>
+
+  <!-- Movie Tagline -->
+  <text x="300" y="110" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="14" fill="#FFCC00" letter-spacing="6">BEYOND THE SPEED OF SOUND</text>
+
+  <!-- Main Title -->
+  <text x="300" y="780" text-anchor="middle" font-family="'Impact', 'Arial Black', sans-serif" font-size="62" fill="#FFFFFF" letter-spacing="6" filter="url(#speedGlow)">SPEED WINGS</text>
+  <text x="300" y="815" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="800" fill="#00D4FF" letter-spacing="4">MACH 5 • AIR COMBAT THRILLER</text>
+
+  <!-- Credits Block -->
+  <text x="300" y="855" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#90CDF4" letter-spacing="2">
+    STARRING DUSTIN RHODES • JAXSON BLAKE • SIENNA TORRES
+  </text>
+  <text x="300" y="872" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#63B3ED" letter-spacing="1.5">
+    SOUNDTRACK BY HANS VANCE • IN ULTRALUX &amp; IMAX • ONLY IN THEATRES
+  </text>
+</svg>

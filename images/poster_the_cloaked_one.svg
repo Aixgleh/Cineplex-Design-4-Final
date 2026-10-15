@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dramaSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#020813"/>
+      <stop offset="35%" stop-color="#07172A"/>
+      <stop offset="65%" stop-color="#1E3A5F"/>
+      <stop offset="90%" stop-color="#141E28"/>
+      <stop offset="100%" stop-color="#060A0F"/>
+    </linearGradient>
+    <radialGradient id="moonGlow" cx="50%" cy="25%" r="40%">
+      <stop offset="0%" stop-color="#FFDD77" stop-opacity="0.9"/>
+      <stop offset="30%" stop-color="#FFCC00" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#020813" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="cloakGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Sky & Atmosphere -->
+  <rect width="600" height="900" fill="url(#dramaSky)"/>
+  <rect width="600" height="900" fill="url(#moonGlow)"/>
+
+  <!-- Distant Moody Full Moon -->
+  <circle cx="300" cy="220" r="70" fill="#FFF5D6" opacity="0.85" filter="url(#cloakGlow)"/>
+  <circle cx="330" cy="210" r="60" fill="#0A1828" opacity="0.15"/>
+
+  <!-- Storm Clouds Passing Moon -->
+  <path d="M 120 220 Q 240 180 360 210 Q 480 230 520 200 L 540 260 Q 400 240 260 270 Z" fill="#050E1A" opacity="0.7"/>
+  <path d="M 60 250 Q 200 220 340 250 Q 460 260 560 230 L 580 290 Q 420 280 220 310 Z" fill="#040912" opacity="0.6"/>
+
+  <!-- Distant High Cliffs and Castle Silhouette -->
+  <polygon points="40,540 90,460 120,480 140,430 150,440 170,410 190,450 230,480 260,540" fill="#03070E"/>
+  <polygon points="360,550 410,480 430,440 450,440 460,390 470,390 480,440 510,460 560,550" fill="#03070E"/>
+
+  <!-- Ocean Waves Crashing at Cliff Base -->
+  <path d="M 0 580 Q 150 560 300 580 Q 450 600 600 570 L 600 700 L 0 700 Z" fill="#05101E"/>
+  <path d="M 0 620 Q 200 600 400 620 Q 520 630 600 610 L 600 730 L 0 730 Z" fill="#020812"/>
+
+  <!-- Dramatic Foreground Rocky Crag with Mysterious Cloaked Figure -->
+  <polygon points="180,740 240,560 360,560 420,740" fill="#010408"/>
+
+  <!-- Cloaked Figure Standing against the Moon -->
+  <g fill="#000205">
+    <!-- Hood Peak -->
+    <path d="M 282 455 Q 300 415 318 455 Q 300 445 282 455 Z"/>
+    <!-- Face shadowed opening -->
+    <ellipse cx="300" cy="458" rx="8" ry="12" fill="#0A1624"/>
+    <!-- Shoulders & Billowing Cloak -->
+    <path d="M 280 465 Q 260 520 230 620 Q 270 610 300 620 Q 330 610 370 620 Q 340 520 320 465 Z"/>
+    <!-- Wind-swept Cloak Trails -->
+    <path d="M 230 620 Q 200 590 180 540 Q 210 570 240 600 Z"/>
+    <path d="M 370 620 Q 410 580 440 530 Q 400 570 360 600 Z"/>
+  </g>
+
+  <!-- Glowing Golden Embers Floating in Air -->
+  <g fill="#FFCC00" filter="url(#cloakGlow)" opacity="0.8">
+    <circle cx="210" cy="480" r="2"/>
+    <circle cx="230" cy="420" r="2.5"/>
+    <circle cx="260" cy="510" r="1.5"/>
+    <circle cx="340" cy="490" r="2"/>
+    <circle cx="370" cy="440" r="2.5"/>
+    <circle cx="390" cy="500" r="1.8"/>
+  </g>
+
+  <!-- Tagline -->
+  <text x="300" y="80" text-anchor="middle" font-family="'Georgia', serif" font-style="italic" font-size="14" fill="#E2E8F0" letter-spacing="4">SECRETS CANNOT REMAIN BURIED FOREVER</text>
+
+  <!-- Title -->
+  <text x="300" y="780" text-anchor="middle" font-family="'Times New Roman', 'Georgia', serif" font-size="54" font-weight="700" fill="#FFFFFF" letter-spacing="4" filter="url(#cloakGlow)">THE CLOAKED ONE</text>
+  <text x="300" y="815" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#FFCC00" letter-spacing="5">AN EPIC DRAMA OF BETRAYAL &amp; HONOR</text>
+
+  <!-- Billing Block -->
+  <text x="300" y="855" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#94A3B8" letter-spacing="2">
+    ACADEMY AWARD NOMINEE EVELYN RHODES • ROWAN BLACKWOOD • CLIVE MORROW
+  </text>
+  <text x="300" y="872" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#64748B" letter-spacing="1.5">
+    DIRECTED BY GABRIEL THORN • SCREENPLAY BY LIAM FAULKNER • A CINEPLEX ORIGINAL
+  </text>
+</svg>
